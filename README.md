@@ -1,1 +1,1 @@
-# olio-ohjelmointi
+# olio-ohjelmointi kurssin viikkotehtävät
