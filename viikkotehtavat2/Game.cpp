@@ -10,7 +10,7 @@ Game::Game(int ylaraja)
     maxNumber = ylaraja;
     std::srand(std::time(NULL));
     randomNumber = (rand()%maxNumber) +1 ;
-
+    cout << "maximi numeroksi on annettu: "<< maxNumber << endl;
 
 }
 
@@ -39,8 +39,10 @@ void Game::play(){
 
 void Game::printGameResult(){
     cout << "arvottu luku oli: " << randomNumber << endl;
-    cout << " arvausten maara: "<< numOfGuesses << endl;
+    cout << "arvausten maara: "<< numOfGuesses << endl;
 
 }
 
-Game::~Game(){}
+Game::~Game(){
+    cout << "desktruktori:  objecti tyhjennetty pinomuistista." << endl;
+}
