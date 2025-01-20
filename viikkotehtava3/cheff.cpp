@@ -49,9 +49,9 @@ bool ItalianChef::askSecret(string salasana, int jauho, int vesi){
         makepizza();
         return true;
     }
-    else{
-        return false;
-    }
+
+ return false;
+
 }
 
 int ItalianChef::makepizza(){
