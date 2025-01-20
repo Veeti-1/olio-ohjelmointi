@@ -1,6 +1,6 @@
 #include "chef.h"
 #include <iostream>
-#include <algorithm>
+
 
 Chef::Chef(string nimi): chefName(nimi){
     cout<<"chef "<< chefName << " konstruktori" << endl;
