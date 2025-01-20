@@ -3,11 +3,11 @@
 #include <algorithm>
 
 Chef::Chef(string nimi): chefName(nimi){
-    cout<<"chef "<< chefName << "konstruktori" << endl;
+    cout<<"chef "<< chefName << " konstruktori" << endl;
 
 }
 Chef:: ~Chef(){
-    cout << "destruktori: kokin nimi: "<< endl;
+    cout << "chef destruktori"<< endl;
 
 }
 string Chef::getName(){
@@ -17,13 +17,13 @@ string Chef::getName(){
 
 int Chef::makeSalad(int ainekset){
   int annokset = ainekset / 5;
-    cout << "makeSalad kutsuttu, ainestemaara: " << ainekset << ", aineksilla voi tehda: " << annokset <<"annosta" << endl;
+    cout << "salaatin ainestenmaara: " << ainekset << ", aineksilla voi tehda: " << annokset <<" annosta" << endl;
   return annokset;
 
 }
 int Chef::makeSoup(int ainekset){
     int annokset = ainekset/3;
-    cout <<"makeSoup kutsuttu ainestemaara: " << ainekset << ", aineksilla voi tehda: " << annokset <<"annosta" << endl;
+    cout <<"keiton ainestenmaara: " << ainekset << ", aineksilla voi tehda: " << annokset <<" annosta" << endl;
 
     return annokset;
 }
@@ -41,11 +41,11 @@ ItalianChef:: ~ItalianChef(){
 
 bool ItalianChef::askSecret(string salasana, int jauho, int vesi){
     if(password == salasana){
-        cout << "salasana oikein." << endl;
-        jauho = flour;
-        cout << "jauhot: "<< flour;
-        vesi = water;
-        cout << "vesi: " << water;
+        cout << "Password ok!" << endl;
+        flour = jauho;
+
+        water = vesi;
+
         makepizza();
         return true;
     }

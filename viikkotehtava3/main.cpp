@@ -8,7 +8,7 @@ int main()
     cout << "anna kokille nimi: ";
     cin >> chefName;
     ItalianChef ItalianChef(chefName);
-    cout << "kokin nimi: " << ItalianChef.getName() << endl;
+    ItalianChef.getName();
     int ainekset;
     cout << "anna salaatin aineksien maara: ";
     cin >> ainekset;
@@ -33,7 +33,7 @@ int main()
 
     bool oikein = ItalianChef.askSecret(salasana, jauho, vesi);
     if(oikein){
-        cout << "salasana oli oikein ja pizzat on valmistettu" << endl;
+        cout << " " << endl;
 
     }
     else{
