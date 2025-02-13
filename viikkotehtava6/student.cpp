@@ -4,7 +4,7 @@
 using namespace std;
 
 Student::Student(string nimi, int ika) {
-    cout << "student construktori!" << endl;
+   
     Name = nimi;
     Age = ika;
 
