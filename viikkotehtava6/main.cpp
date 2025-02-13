@@ -19,14 +19,13 @@ int main()
         cout << "Find and print student = 4" << endl;
         cin >> selection;
 
-
-
         switch (selection)
         {
         case 0:
-            cout << "anna opiskelijan nimi ja ika: " << endl;
+            cout << "anna opiskelijan nimi: "<< endl;
 
             cin >> nimi;
+            cout << "anna opiskelijan ika: " << endl;
             cin >> ika;
             studentList.push_back({ nimi, ika });
 
@@ -35,9 +34,10 @@ int main()
             for (auto& Student : studentList) {
                 cout << Student.getName() << endl;
             }
-            // Tulosta StudentList vektorin kaikkien opiskelijoiden
-            // nimet.
+      
             break;
+            /*Tulosta StudentList vektorin kaikkien opiskelijoiden
+             nimet.*/
 
         case 2:
             sort(studentList.begin(), studentList.end(), [](const Student& a, const Student& b) {
@@ -46,33 +46,47 @@ int main()
             for (const auto& Student : studentList) {
                 Student.printStudentInfo();
             }
-            // Järjestä StudentList vektorin Student oliot nimen mukaan
-            // algoritmikirjaston sort funktion avulla
-            // ja tulosta printStudentInfo() funktion avulla järjestetyt
-            // opiskelijat
             break;
+            /*Järjestä StudentList vektorin Student oliot nimen mukaan
+          // algoritmikirjaston sort funktion avulla
+          // ja tulosta printStudentInfo() funktion avulla järjestetyt
+          // opiskelijat*/
 
         case 3:
-            cout << " ";
-            // Järjestä StudentList vektorin Student oliot iän mukaan
-            // algoritmikirjaston sort funktion avulla
-            // ja tulosta printStudentInfo() funktion avulla järjestetyt
-            // opiskelijat
+            sort(studentList.begin(), studentList.end(), [](const Student& a, const Student& b) {
+                return a.getAge() < b.getAge();
+                });
+            for (const auto& Student : studentList) {
+                Student.printStudentInfo();
+            } 
             break;
-        case 4:
-            cout << " ";
-            // Kysy käyttäjältä opiskelijan nimi
-            // Etsi studentListan opiskelijoista algoritmikirjaston
-            // find_if funktion avulla löytyykö käyttäjän antamaa nimeä
-            // listalta. Jos löytyy, niin tulosta opiskelijan tiedot.
+            /*Järjestä StudentList vektorin Student oliot iän mukaan
+           algoritmikirjaston sort funktion avulla
+           ja tulosta printStudentInfo() funktion avulla järjestetyt
+         opiskelijat */
+        case 4: {
+            cout << "anna opiskelijan nimi: ";
+            cin >> nimi;
+
+            auto it = find_if(studentList.begin(), studentList.end(), [&nimi](const Student& student) { return student.getName() == nimi; });
+            if (it != studentList.end()) {
+                cout << "opiskelija loytyi: " << endl;
+                it->printStudentInfo();
+                break;
+            }
+            cout << "opiskelijaa ei loytynyt!" << endl;
             break;
+            /*Kysy käyttäjältä opiskelijan nimi
+            Etsi studentListan opiskelijoista algoritmikirjaston
+            find_if funktion avulla löytyykö käyttäjän antamaa nimeä
+            listalta. Jos löytyy, niin tulosta opiskelijan tiedot.
+           */
+        }
+
         default:
             cout << "Wrong selection, stopping..." << endl;
             break;
         }
-
-
-
     }
     return 0;
 }

@@ -25,5 +25,5 @@ int Student::getAge() const {
 }
 
 void Student::printStudentInfo() const {
-    cout << Name << " " << Age << endl;
+    cout <<"Student " << Name << " Age " << Age << endl;
 }
