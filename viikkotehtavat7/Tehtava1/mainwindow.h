@@ -18,15 +18,13 @@ public:
     ~MainWindow();
 
 private slots:
+
     void on_Reset_clicked();
 
     void on_Count_clicked();
 
 private:
     Ui::MainWindow *ui;
-
-    short Number1;
-    int Number2;
-    int result;
+    int number = 0;
 };
 #endif // MAINWINDOW_H

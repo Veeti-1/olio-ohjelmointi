@@ -15,25 +15,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Reset_clicked()
 {
-
-
-   // QString str = QString::number(Number1);
-    Number1 = 0;
-    ui->lineEdit->setText(QString::number(Number1));
-   // qDebug() << line;
+    number = 0;
+    ui->lineEdit->setText(QString::number(number));
 }
 
 
 void MainWindow::on_Count_clicked()
 {
-    Number1++;
-    ui->lineEdit->setText(QString::number(Number1));
-
-}
-
-
-void MainWindow::on_pushButton_clicked()
-{
+    number++;
+    ui->lineEdit->setText(QString::number(number));
 
 }
 
